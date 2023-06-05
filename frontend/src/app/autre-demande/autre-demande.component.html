@@ -1,0 +1,164 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Demandees</h4>
+            <p class="card-category">Les champs * sont obligatoires</p>
+          </div>
+          <form [formGroup]="angForm" (ngSubmit)="postdata(angForm.value)">
+            <div class="card-body" *ngIf="userData">
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Select an option</mat-label>
+                    <mat-select
+                      [(value)]="selected"
+                      formControlName="type"
+                      autocomplete="off"
+                      placeholder="Type de demande"
+                    >
+                      <mat-option>None</mat-option>
+                      <mat-option value="Attestation de situation fonciere"
+                        >Attestation de situation fonciere</mat-option
+                      >
+                      <mat-option value="Certificat de salaire"
+                        >Certificat de salaire</mat-option
+                      >
+                      <mat-option
+                        value="Attestation de réserve de performance sur salaire"
+                        >Attestation de réserve de performance sur
+                        salaire</mat-option
+                      >
+                      <mat-option value="Liste des services"
+                        >Liste des services</mat-option
+                      >
+                      <mat-option value="Changer de compte courant"
+                        >Changer de compte courant</mat-option
+                      >
+                      <mat-option value="Domiciliation du compte courant"
+                        >Domiciliation du compte courant</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <p>You selected: {{ selected }}</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      type="text"
+                      name="mois_annee"
+                      formControlName="mois_annee"
+                      autocomplete="off"
+                      placeholder="MM/AAAA"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Select an option</mat-label>
+                    <mat-select
+                      [(value)]="selected2"
+                      formControlName="langue"
+                      autocomplete="off"
+                      placeholder="Langue de papier"
+                    >
+                      <mat-option>None</mat-option>
+                      <mat-option value="Français">Français</mat-option>
+                      <mat-option value="Arabe">Arabe</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <p>You selected: {{ selected2 }}</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      name="matricule"
+                      formControlName="matricule"
+                      autocomplete="off"
+                      placeholder="Matricule"
+                      type="text"
+                      [(ngModel)]="userData.matricule"
+                      readonly="readonly"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      type="text"
+                      name="name"
+                      formControlName="name"
+                      autocomplete="off"
+                      placeholder="Nom et prénom "
+                      [(ngModel)]="userData.name"
+                      readonly="readonly"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      type="text"
+                      name="grade"
+                      formControlName="grade"
+                      autocomplete="off"
+                      placeholder="Grade"
+                      [(ngModel)]="userData.grade"
+                      readonly="readonly"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      type="text"
+                      name="pieces_jointes"
+                      formControlName="pieces_jointes"
+                      autocomplete="off"
+                      placeholder="Pieces jointes"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <button
+                mat-raised-button
+                type="submit"
+                class="btn btn-danger pull-right"
+                [disabled]="!angForm.valid"
+              >
+                Ajouter demande
+              </button>
+              <div class="clearfix"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

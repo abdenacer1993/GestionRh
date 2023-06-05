@@ -1,0 +1,71 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Liste mes congie</h4>
+            <p class="card-category"></p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <!-- <th>ID</th> -->
+                  <th>Nom && prénom</th>
+                  <th>Matricule</th>
+                  <th>Date debut</th>
+                  <th>Date fin</th>
+                  <th>Etat</th>
+                  <th>Action</th>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="
+                      let formation of dataSourceformation?.data
+                        | paginate
+                          : {
+                              itemsPerPage: pageSize,
+                              currentPage: currentPage,
+                              totalItems: totalItems
+                            }
+                    "
+                  >
+                    <!-- <td>{{ formation.id }}</td> -->
+
+                    <td>{{ formation.name }}</td>
+                    <td>{{ formation.matricule }}</td>
+                    <td>{{ formation.date_deb }}</td>
+                    <td>{{ formation.date_fin }}</td>
+                    <td>{{ formation.etat }}</td>
+                    <td>
+                      <div
+                        class="btn-group"
+                        role="group"
+                        aria-label="Basic example"
+                      >
+                        <button type="button" class="btn btn-primary" (click)="openDialog(formation.id)">
+                          Consulter
+                        </button>
+                        
+
+                        <button type="button" (click)="deleteRecord(formation.id)" class="btn btn-danger">
+                          Supprimer
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="pagination">
+              <pagination-controls
+                (pageChange)="pageChanged($event)"
+              ></pagination-controls>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

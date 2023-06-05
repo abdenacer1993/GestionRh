@@ -1,0 +1,73 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Liste enseignant</h4>
+            <p class="card-category"></p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Date de naissance</th>
+                  <th>Role</th>
+                  <th>Action</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of dataSourceUsers?.data | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalItems }">
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.date_naissance }}</td>
+                    <td>{{ user.role }}</td>
+                    <td>
+                      <div
+                        class="btn-group"
+                        role="group"
+                        aria-label="Basic example"
+                        *ngIf="id_ens!=user.id"
+                      >
+                        <!-- <button type="button" class="btn btn-primary" (click)="openDialog(formation.id)">
+                          Consulter
+                        </button> -->
+                        
+
+                        <button type="button" (click)="deleteRecord(user.id)" class="btn btn-danger">
+                          Supprimer
+                        </button>
+                      </div>
+                      <div
+                        class="btn-group"
+                        role="group"
+                        aria-label="Basic example"
+                        *ngIf="id_ens==user.id"
+                      >
+                        <!-- <button type="button" class="btn btn-primary" (click)="openDialog(formation.id)">
+                          Consulter
+                        </button> -->
+                        
+
+                         <button type="button" (click)="deleteRecord(user.id)" class="btn btn-danger" disabled>
+                          Supprimer
+                        </button> 
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="pagination">
+              <pagination-controls (pageChange)="pageChanged($event)" ></pagination-controls>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

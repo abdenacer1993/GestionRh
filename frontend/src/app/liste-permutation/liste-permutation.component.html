@@ -1,0 +1,80 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">Liste mes permutation </h4>
+              <p class="card-category"></p>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class="text-primary">
+                    <!-- <th>ID</th> -->
+                    <th>Nom enseignant1</th>
+                    <th>Matricule ens 1</th>
+                    <th>Nom fac ens 1</th>
+                    <th>Grade ens 1</th>
+                    <th>Nom enseignant2</th>
+                    <th>Matricule ens 2</th>
+                    <th>Nom fac ens 2</th>
+                    <th>Grade ens 2</th>
+                    <th>Etat</th>
+                    <th>Action</th>
+                  </thead>
+                  <tbody>
+                    <tr
+                      *ngFor="
+                        let formation of dataSourceformation?.data
+                          | paginate
+                            : {
+                                itemsPerPage: pageSize,
+                                currentPage: currentPage,
+                                totalItems: totalItems
+                              }
+                      "
+                    >
+                      <!-- <td>{{ formation.id }}</td> -->
+  
+                      <td>{{ formation.name_enseignant1 }}</td>
+                      <td>{{ formation.matricule1 }}</td>
+                      <td>{{ formation.fac1 }}</td>
+                      <td>{{ formation.Grade1 }}</td>
+                      <td>{{ formation.name_enseignant2 }}</td>
+                      <td>{{ formation.matricule2 }}</td>
+                      <td>{{ formation.fac2 }}</td>
+                      <td>{{ formation.Grade2 }}</td>
+                      <td>{{ formation.etat }}</td>
+                      <td>
+                        <div
+                          class="btn-group"
+                          role="group"
+                          aria-label="Basic example"
+                        >
+                          <button type="button" class="btn btn-primary" (click)="openDialog(formation.id)">
+                            Consulter
+                          </button>
+                          
+  
+                          <button type="button" (click)="deleteRecord(formation.id)" class="btn btn-danger">
+                            Supprimer
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="pagination">
+                <pagination-controls
+                  (pageChange)="pageChanged($event)"
+                ></pagination-controls>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

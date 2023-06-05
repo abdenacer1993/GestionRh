@@ -1,0 +1,138 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Calculer nombre des heures</h4>
+            <p class="card-category">Les champs * sont obligatoires</p>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="angForm" (ngSubmit)="postdata(angForm.value)">
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field appearance="fill">
+                    
+
+                    <mat-select
+                      [(ngModel)]="selected"
+                      placeholder="Nom de l'enseignant"
+                      formControlName="name_enseignant"
+                      autocomplete="off"
+                      (selectionChange)="onOptionsSelected()"
+                    >
+                      <mat-option
+                        *ngFor="let user of dataSourceUsers"
+                        [value]="user.name"
+                        >{{ user.name }}</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <p>You selected: {{ selected }}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                       
+                      name="role"
+                      formControlName="role"
+                      autocomplete="off"
+                      placeholder="Role"
+                      type="text"
+                      readonly="readonly"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      type="text"
+                      name="nbr_hrcour"
+                      formControlName="nbr_hrcour"
+                      autocomplete="off"
+                      placeholder="Nombre des heures cours"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      type="text"
+                      name="nbr_hrtp"
+                      formControlName="nbr_hrtp"
+                      autocomplete="off"
+                      placeholder="Nombre des heures tp"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      type="text"
+                      name="nbr_hrtd"
+                      formControlName="nbr_hrtd"
+                      autocomplete="off"
+                      placeholder="Nombre des heures td"
+                    />
+                  </mat-form-field>
+                </div>
+                
+              </div>
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      type="text"
+                      name="nbr_hrtp"
+                      formControlName="nbr_hrtp"
+                      autocomplete="off"
+                      placeholder="Nombre des heures tp"
+                    />
+                  </mat-form-field>
+                </div>
+                
+              </div>
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      type="text"
+                      name="prixtt"
+                      formControlName="prixtt"
+                      autocomplete="off"
+                      placeholder="prix total"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <button
+                mat-raised-button
+                type="submit"
+                class="btn btn-danger pull-right"
+                [disabled]="!angForm.valid"
+              >
+                Ajouter enseignant
+              </button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

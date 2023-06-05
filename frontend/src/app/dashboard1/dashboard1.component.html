@@ -1,0 +1,37 @@
+<div class="main-content">
+  <div class="container-fluid">
+    
+    <div class="row">
+      <div class="col-md-4" *ngFor="let formation of formations  ">
+        <div class="card card-chart" >
+            <div class="card-header card-header-success">
+              <div class="ct-chart" >
+                  <img [src]="getBase64Image(formation.file)" alt="" style="height: 200px;width: 290px;">
+                </div>
+              </div>
+          <div class="card-body">
+            <h4 class="card-title">{{ formation.title }}</h4>
+            <p class="card-category">
+              <span class="text-success">
+                {{formation.name}}
+              </span>
+              {{formation.email}}
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i> {{ formation.date_deb}}
+              <i class="material-icons">access_time</i> {{ formation.date_fin}}
+            </div>
+          </div>
+          <div *ngIf="role !='rh'">
+            <button type="button" class="btn btn-primary" (click)="openDialog(formation.id)">
+              Consulter
+            </button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>

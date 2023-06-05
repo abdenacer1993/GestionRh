@@ -1,0 +1,63 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">Liste congie</h4>
+              <p class="card-category"></p>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class="text-primary">
+                    <!-- <th>ID</th> -->
+                    <th>Nom enseignant</th>
+                    <!-- <th>Formateur</th> -->
+                    <!-- <th>Email formateur</th> -->
+                    <th>Date debut</th>
+                    <th>Date fin</th>
+                    <th>Etat</th>
+                    <th>Action</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let congie of dataSourcecongies?.data | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalItems }">
+                      <!-- <td>{{ congie.id }}</td> -->
+                      <td>{{ congie.name }}</td>
+                      <!-- <td>{{ congie.name }}</td> -->
+                      <!-- <td>{{ congie.email }}</td> -->
+                      <td>{{ congie.date_deb }}</td>
+                      <td>{{ congie.date_fin }}</td>
+                      <td>{{ congie.etat }}</td>
+                      <td>
+                        <div
+                        class="btn-group"
+                        role="group"
+                        aria-label="Basic example"
+                      >
+                        <button type="button" class="btn btn-primary" (click)="openDialog(congie.id)">
+                          Consulter
+                        </button>
+                        
+
+                        <button type="button" (click)="deleteRecord(congie.id)" class="btn btn-danger">
+                          Supprimer
+                        </button>
+                      </div>
+                      </td>
+                      
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="pagination">
+                <pagination-controls (pageChange)="pageChanged($event)" ></pagination-controls>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

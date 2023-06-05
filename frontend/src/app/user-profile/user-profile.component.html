@@ -1,0 +1,291 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Modifier profile</h4>
+            <p class="card-category">Les champs * sont obligatoires</p>
+          </div>
+          <form [formGroup]="angForm" (ngSubmit)="updateUserProfiles(angForm.value)">
+            <div class="card-body" *ngIf="userData">
+              <div class="row">
+                <div class="col-md-8">
+                  
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      type="text"
+                      name="name"
+                      formControlName="name"
+                      autocomplete="off"
+                      [(ngModel)]="userData.name"
+                      placeholder="Nom && prenom"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      name="email"
+                      formControlName="email"
+                      autocomplete="off"
+                      [(ngModel)]="userData.email"
+                      type="email"
+                      placeholder="Email"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      type="password"
+                      name="pwd"
+                      formControlName="pwd"
+                      autocomplete="off"
+                      placeholder="Password"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      name="role"
+                      formControlName="role"
+                      autocomplete="off"
+                      [(ngModel)]="userData.role"
+                      type="text"
+                      readonly="readonly"
+                      placeholder="Role"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      name="cin"
+                      formControlName="cin"
+                      autocomplete="off"
+                      [(ngModel)]="userData.cin"
+                      type="number"
+                      maxlength="8"
+                      placeholder="CIN"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      name="date_naissance"
+                      formControlName="date_naissance"
+                      autocomplete="off"
+                      [(ngModel)]="userData.date_naissance"
+                      type="date"
+                      placeholder="Date de naissance"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      name="matricule"
+                      formControlName="matricule"
+                      autocomplete="off"
+                      [(ngModel)]="userData.matricule"
+                      
+                      type="number"
+                      minlength="4"
+                      placeholder="Matricule"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Select an option</mat-label>
+                    <mat-select
+                      [(value)]="selected2"
+                      formControlName="situation"
+                      autocomplete="off"
+                      aria-placeholder="Situation"
+                    >
+                      <mat-option>None</mat-option>
+                      <mat-option value="Célibataire">Célibataire</mat-option>
+                      <mat-option value="Marie">Marie</mat-option>
+                      <mat-option value="Veuf">Veuf</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <p>You selected: {{ selected2 }}</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      name="adresse_postale"
+                      formControlName="adresse_postale"
+                      autocomplete="off"
+                      [(ngModel)]="userData.adresse_postale"
+                      type="text"
+                      placeholder="Adresse postale"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      name="grade"
+                      formControlName="grade"
+                      autocomplete="off"
+                      [(ngModel)]="userData.grade"
+                      type="text"
+                      placeholder="Grade"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      name="categorie"
+                      formControlName="categorie"
+                      autocomplete="off"
+                      [(ngModel)]="userData.categorie"
+                      type="text"
+                      placeholder="Categorie"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      name="certif"
+                      formControlName="certif"
+                      autocomplete="off"
+                      [(ngModel)]="userData.certif"
+                      type="text"
+                      placeholder="Certif"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      name="niveau_educ"
+                      formControlName="niveau_educ"
+                      autocomplete="off"
+                      [(ngModel)]="userData.niveau_educ"
+                      type="text"
+                      placeholder="Niveau Education"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <button
+                mat-raised-button
+                type="submit"
+                class="btn btn-danger pull-right"
+                
+              >
+                Modifier profile
+              </button>
+              <div class="clearfix"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <h2 class="text-center">Registration</h2>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-5 col-md-offset-3">
+    <div class="jumbotron">
+      <form
+        [formGroup]="angForm"
+        (ngSubmit)="postdata(angForm)"
+        autocomplete="off"
+      >
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            formControlName="name"
+            autocomplete="off"
+            
+            placeholder="Name"
+            class="form-control input-sm"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            formControlName="email"
+            autocomplete="off"
+            class="form-control input-sm"
+            placeholder="Email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="Password">Password</label>
+          <input
+            type="password"
+            name="Password"
+            formControlName="password"
+            autocomplete="off"
+            class="form-control input-sm"
+            placeholder="Password"
+          />
+        </div>
+        <button type="submit" class="btn btn-success">Register</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div> -->

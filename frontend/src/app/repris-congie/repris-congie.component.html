@@ -1,0 +1,176 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">Demande congie</h4>
+              <p class="card-category">Les champs * sont obligatoires</p>
+            </div>
+            <form [formGroup]="angForm" (ngSubmit)="postdata(angForm.value)" >
+            <div class="card-body"*ngIf="userData">
+                <p><strong>Je suis le soussigné ,</strong></p> 
+                <div class="row">
+                    
+                    
+                  <div class="col-md-8">
+                    
+                    <mat-form-field class="example-full-width">
+                      
+                      <input
+                        matInput
+                        type="text"
+                        name="name"
+                        formControlName="name"
+                        autocomplete="off"
+                        placeholder="Nom et prénom"
+                        [(ngModel)]="userData.name"
+                        readonly="readonly"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+
+                <div class="row">
+                    
+                    <div class="col-md-8">
+                      <mat-form-field class="example-full-width">
+                        
+                        <input
+                          matInput
+                          type="text"
+                          name="grade"
+                          formControlName="grade"
+                          autocomplete="off"
+                          [(ngModel)]="userData.grade"
+                          readonly="readonly"
+                          placeholder="Grade"
+                          
+                          
+                        />
+                      </mat-form-field>
+                      
+                    </div>
+                  </div> 
+
+                  <div class="row">
+                    <div class="col-md-8">
+                      <mat-form-field class="example-full-width">
+                        <input
+                          matInput
+                          type="date"
+                          name="date_repris"
+                          formControlName="date_repris"
+                          autocomplete="off"
+                          placeholder="Date de reprise"
+                          
+                          
+                          
+                        />
+                      </mat-form-field>
+                      
+                    </div>
+                  </div>
+
+
+                  <p>Faculte : Institut Supérieur d'Administration des Entreprises de Gafsa</p>
+                  
+                  
+                  <div class="row">
+                    <div class="col-md-8">
+                      <mat-form-field appearance="fill">
+                        <mat-label>Select an option</mat-label>
+                        <mat-select
+                          [(value)]="selected"
+                          formControlName="type"
+                          autocomplete="off"
+                          placeholder="Type de congie"
+                        >
+                          <mat-option>None</mat-option>
+                          <mat-option value="Maladie">Maladie</mat-option>
+                          <mat-option value="Vacances de repos annuelles">Vacances de repos annuelles</mat-option>
+                          <mat-option value="Vacances compensatoires">Vacances compensatoires</mat-option>
+                          <mat-option value="Vacances exceptionnelles">Vacances exceptionnelles</mat-option>
+
+
+                        </mat-select>
+                      </mat-form-field>
+                      <p>You selected: {{ selected }}</p>
+                    </div>
+                  </div> 
+                  
+                  
+                  
+                  <div class="row">
+                    <div class="col-md-8">
+                      <mat-form-field class="example-full-width">
+                        <input
+                          matInput
+                          type="date"
+                          name="date_deb"
+                          formControlName="date_deb"
+                          autocomplete="off"
+                          placeholder="Date de debut"
+                          
+                          
+                        />
+                      </mat-form-field>
+                      
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-8">
+                        <mat-form-field class="example-full-width">
+                          <input
+                            matInput
+                            type="date"
+                            name="date_fin"
+                            formControlName="date_fin"
+                            autocomplete="off"
+                            placeholder="Date de fin"
+                            
+                            
+                          />
+                        </mat-form-field>
+                        
+                      </div>
+                    </div>
+
+                    
+                      <div class="row">
+                        <div class="col-md-8">
+                          <mat-form-field class="example-full-width">
+                            <input
+                              matInput
+                              type="text"
+                              name="cause"
+                              formControlName="cause"
+                              autocomplete="off"
+                              placeholder="Cause de congié"
+                              
+                              
+                            />
+                          </mat-form-field>
+                        </div>
+                      </div>
+  
+                <button
+                  mat-raised-button
+                  type="submit"
+                  class="btn btn-danger pull-right"
+                  [disabled]="!angForm.valid"
+                  
+                >
+                  Repris congie
+                </button>
+                <div class="clearfix"></div>
+              
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

@@ -1,0 +1,253 @@
+<h1 mat-dialog-title>
+    Modifier mon congie
+    </h1>
+    <div mat-dialog-content style="width: 600px;">
+        <form [formGroup]="angForm"  (ngSubmit)="postdata(angForm.value)">
+            <div class="card-body">
+              
+                <div class="row">
+                  <div class="col-md-8">
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        type="text"
+                        name="name"
+                        formControlName="name"
+                        autocomplete="off"
+                        placeholder="Nom et prénom "
+                        readonly="readonly"
+                        
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+                
+                  
+                  <div class="row">
+                    <div class="col-md-8">
+                      <mat-form-field class="example-full-width">
+                        <input
+                          matInput
+                          name="matricule"
+                          formControlName="matricule"
+                          autocomplete="off"
+                          placeholder="Matricule"
+                          type="text"
+                          readonly="readonly"
+                          
+                          
+
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                
+                
+                  <div class="row">
+                    <div class="col-md-8">
+                      <mat-form-field class="example-full-width">
+                        <input
+                          matInput
+                          name="type"
+                          formControlName="type"
+                          autocomplete="off"
+                          placeholder="Type de congie"
+                          type="text"
+                          readonly="readonly"
+                          
+                          
+
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-md-8">
+                      <mat-form-field class="example-full-width">
+                        <input
+                          matInput
+                          type="text"
+                          name="cin"
+                          formControlName="cin"
+                          autocomplete="off"
+                          placeholder="CIN"
+                          readonly="readonly"
+                         
+                          
+                          
+                          
+                        />
+                      </mat-form-field>
+                      
+                    </div>
+                  </div>  
+
+                  <div class="row">
+                    <div class="col-md-8">
+                      <mat-form-field class="example-full-width">
+                        <input
+                          matInput
+                          type="text"
+                          name="grade"
+                          formControlName="grade"
+                          autocomplete="off"
+                          placeholder="Grade"
+                          readonly="readonly"
+                          
+                          
+                          
+                        />
+                      </mat-form-field>
+                      
+                    </div>
+                  </div> 
+
+                  <div class="row">
+                    <div class="col-md-8">
+                      <mat-form-field class="example-full-width">
+                        <input
+                          matInput
+                          type="text"
+                          name="poste"
+                          formControlName="poste"
+                          autocomplete="off"
+                          placeholder="Poste"
+                          
+                          
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-8">
+                      <mat-form-field class="example-full-width">
+                        <input
+                          matInput
+                          type="number"
+                          name="nbrjour"
+                          formControlName="nbrjour"
+                          autocomplete="off"
+                          placeholder="Nombre des jours"
+                          
+                          
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8">
+                      <mat-form-field class="example-full-width">
+                        <input
+                          matInput
+                          type="date"
+                          name="date_deb"
+                          formControlName="date_deb"
+                          autocomplete="off"
+                          placeholder="Date de debut"
+                          
+                          
+                        />
+                      </mat-form-field>
+                      
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-8">
+                        <mat-form-field class="example-full-width">
+                          <input
+                            matInput
+                            type="date"
+                            name="date_fin"
+                            formControlName="date_fin"
+                            autocomplete="off"
+                            placeholder="Date de fin"
+                            
+                            
+                          />
+                        </mat-form-field>
+                        
+                      </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                          <mat-form-field class="example-full-width">
+                            <input
+                              matInput
+                              type="text"
+                              name="adresse"
+                              formControlName="adresse"
+                              autocomplete="off"
+                              placeholder="Adresse postale"
+                              
+                              
+                            />
+                          </mat-form-field>
+                        </div>
+                      </div>
+
+
+                      <div class="row">
+                        <div class="col-md-8">
+                          <mat-form-field class="example-full-width">
+                            <input
+                              matInput
+                              type="text"
+                              name="zipcode"
+                              formControlName="zipcode"
+                              autocomplete="off"
+                              placeholder="Code postale"
+                              
+                              
+                            />
+                          </mat-form-field>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-8">
+                          <mat-form-field class="example-full-width">
+                            <input
+                              matInput
+                              type="number"
+                              name="num_tel"
+                              formControlName="num_tel"
+                              autocomplete="off"
+                              placeholder="Numéro telephone"
+                              
+                              
+                            />
+                          </mat-form-field>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-8">
+                          <mat-form-field class="example-full-width">
+                            <input
+                              matInput
+                              type="text"
+                              name="papier"
+                              formControlName="papier"
+                              autocomplete="off"
+                              placeholder="Documents d'accompagnement"
+                              
+                              
+                            />
+                          </mat-form-field>
+                        </div>
+                      </div>
+  
+                      <div mat-dialog-action [align]="'end'">
+                        <button mat-raised-button color="warn" mat-dialog-close="">Close</button>
+                        <button style="margin-left: 8px;" mat-raised-button color="primary" [mat-dialog-close]="true"
+                            [disabled]="!angForm.valid" type="submit">Modifier</button>
+            
+                    </div>
+                <div class="clearfix"></div>
+              
+            </div>
+          </form>
+    </div>

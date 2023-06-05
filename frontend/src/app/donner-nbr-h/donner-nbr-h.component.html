@@ -1,0 +1,136 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">Ajouter nombre d'heure</h4>
+              <p class="card-category">Les champs * sont obligatoires</p>
+            </div>
+            <div class="card-body">
+              <form [formGroup]="angForm" (ngSubmit)="postdata(angForm.value)" >
+                <div class="row">
+                  <div class="col-md-8">
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        type="text"
+                        name="name_enseignant"
+                        formControlName="name_enseignant"
+                        autocomplete="off"
+                        placeholder="Nom et prénom enseignant"
+                        [value]="userName"
+                        readonly="readonly"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+                
+                  
+                  <div class="row">
+                    <div class="col-md-8">
+                      <mat-form-field class="example-full-width">
+                        <input
+                          matInput
+                          name="role"
+                          formControlName="role"
+                          autocomplete="off"
+                          placeholder="Role enseignant"
+                          type="text"
+                          [value]="userRole"
+                          readonly="readonly"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                
+                <div class="row">
+                  <div class="col-md-8">
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        type="number"
+                        name="nbr_heureCour"
+                        formControlName="nbr_heureCour"
+                        autocomplete="off"
+                        placeholder="Nombre d'heure cour"
+                        (input)="onNbrHeureChange()"
+                        
+                      />
+                    </mat-form-field>
+                    <span >{{ totalCour }}</span>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                      <mat-form-field class="example-full-width">
+                        <input
+                          matInput
+                          type="number"
+                          name="nbr_heureTd"
+                          formControlName="nbr_heureTd"
+                          autocomplete="off"
+                          placeholder="Nombre d'heure Td"
+                          (input)="onNbrHeureChange()"
+                          
+                        />
+                      </mat-form-field>
+                      <span>{{totalTd}}</span>
+                    </div>
+                  </div>  
+                  
+                  <div class="row">
+                    <div class="col-md-8">
+                      <mat-form-field class="example-full-width">
+                        <input
+                          matInput
+                          type="number"
+                          name="nbr_heureTp"
+                          formControlName="nbr_heureTp"
+                          autocomplete="off"
+                          placeholder="Nombre d'heure tp"
+                          (input)="onNbrHeureChange()"
+                          
+                        />
+                      </mat-form-field>
+                      <span>{{totalTp}}</span>
+                    </div>
+                  </div>  
+
+                  <div class="row">
+                    <div class="col-md-8">
+                      <mat-form-field class="example-full-width">
+                        <input
+                          matInput
+                          type="text"
+                          name="prixtt"
+                          formControlName="prixtt"
+                          autocomplete="off"
+                          placeholder="Prix nombre d'heure"
+                          [(ngModel)]="totalHours"
+                          (input)="onNbrHeureChange()"
+                          readonly="readonly"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  
+  
+                <button
+                  mat-raised-button
+                  type="submit"
+                  class="btn btn-danger pull-right"
+                  
+                >
+                  Ajouter enseignant
+                </button>
+                <div class="clearfix"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

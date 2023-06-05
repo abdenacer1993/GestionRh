@@ -1,0 +1,59 @@
+<h1 mat-dialog-title>
+    Modifier mon congie
+    </h1>
+    <div mat-dialog-content style="width: 600px;">
+        <form [formGroup]="angForm"  (ngSubmit)="postdata(angForm.value)">
+            <div class="card-body">
+              
+                <div class="row">
+                  <div class="col-md-8">
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        type="text"
+                        name="title"
+                        formControlName="title"
+                        autocomplete="off"
+                        placeholder="Titre de formation "
+                        readonly="readonly"
+                        
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+                
+                  
+                  
+                
+                
+                  <div class="row">
+                    <div class="col-md-8">
+                      <mat-form-field class="example-full-width">
+                        <input
+                          matInput
+                          name="type"
+                          formControlName="type"
+                          autocomplete="off"
+                          placeholder="Type de formation"
+                          type="text"
+                          readonly="readonly"
+                          
+                          
+
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  
+                  
+                      <div mat-dialog-action [align]="'end'">
+                        <button mat-raised-button color="warn" mat-dialog-close="">Close</button>
+                        <button style="margin-left: 8px;" mat-raised-button color="primary" [mat-dialog-close]="true"
+                             type="submit">Postuler</button>
+            
+                    </div>
+                <div class="clearfix"></div>
+              
+            </div>
+          </form>
+    </div>
